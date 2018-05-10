@@ -1,0 +1,17 @@
+C:\Users\Sebastian\source\repos\Xamarin.iOS_BAC_\Xamarin.iOS_BAC_\bin\iPhone\Debug\Xamarin.iOS_BAC_.exe
+C:\Users\Sebastian\source\repos\Xamarin.iOS_BAC_\Xamarin.iOS_BAC_\bin\iPhone\Debug\Xamarin.iOS_BAC_.pdb
+C:\Users\Sebastian\source\repos\Xamarin.iOS_BAC_\Xamarin.iOS_BAC_\bin\iPhone\Debug\ModernHttpClient.dll
+C:\Users\Sebastian\source\repos\Xamarin.iOS_BAC_\Xamarin.iOS_BAC_\bin\iPhone\Debug\Newtonsoft.Json.dll
+C:\Users\Sebastian\source\repos\Xamarin.iOS_BAC_\Xamarin.iOS_BAC_\bin\iPhone\Debug\ModernHttpClient.dll.mdb
+C:\Users\Sebastian\source\repos\Xamarin.iOS_BAC_\Xamarin.iOS_BAC_\bin\iPhone\Debug\Newtonsoft.Json.xml
+C:\Users\Sebastian\source\repos\Xamarin.iOS_BAC_\Xamarin.iOS_BAC_\obj\iPhone\Debug\ibtool\_BundleResourceWithLogicalName.items
+C:\Users\Sebastian\source\repos\Xamarin.iOS_BAC_\Xamarin.iOS_BAC_\obj\iPhone\Debug\actool\_PartialAppManifest.items
+C:\Users\Sebastian\source\repos\Xamarin.iOS_BAC_\Xamarin.iOS_BAC_\obj\iPhone\Debug\actool\_BundleResourceWithLogicalName.items
+C:\Users\Sebastian\source\repos\Xamarin.iOS_BAC_\Xamarin.iOS_BAC_\obj\iPhone\Debug\coremlc\_PartialAppManifest.items
+C:\Users\Sebastian\source\repos\Xamarin.iOS_BAC_\Xamarin.iOS_BAC_\obj\iPhone\Debug\coremlc\_BundleResourceWithLogicalName.items
+C:\Users\Sebastian\source\repos\Xamarin.iOS_BAC_\Xamarin.iOS_BAC_\obj\iPhone\Debug\optimized\Entitlements.plist
+C:\Users\Sebastian\source\repos\Xamarin.iOS_BAC_\Xamarin.iOS_BAC_\obj\iPhone\Debug\optimized\
+C:\Users\Sebastian\source\repos\Xamarin.iOS_BAC_\Xamarin.iOS_BAC_\obj\iPhone\Debug\Xamarin.iOS_BAC_.csproj.CoreCompileInputs.cache
+C:\Users\Sebastian\source\repos\Xamarin.iOS_BAC_\Xamarin.iOS_BAC_\obj\iPhone\Debug\Xamarin.iOS_BAC_.csproj.CopyComplete
+C:\Users\Sebastian\source\repos\Xamarin.iOS_BAC_\Xamarin.iOS_BAC_\obj\iPhone\Debug\Xamarin.iOS_BAC_.exe
+C:\Users\Sebastian\source\repos\Xamarin.iOS_BAC_\Xamarin.iOS_BAC_\obj\iPhone\Debug\Xamarin.iOS_BAC_.pdb

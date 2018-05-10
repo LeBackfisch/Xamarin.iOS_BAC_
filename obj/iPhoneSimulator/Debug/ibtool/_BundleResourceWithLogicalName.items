@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <_BundleResourceWithLogicalName Include="obj\iPhoneSimulator\Debug\ibtool\LaunchScreen.nib">
+      <LogicalName>LaunchScreen.nib</LogicalName>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj\iPhoneSimulator\Debug\ibtool\Main.storyboardc\229-view-230.nib">
+      <LogicalName>Main.storyboardc/229-view-230.nib</LogicalName>
+      <InterfaceDefinition>Main.storyboard</InterfaceDefinition>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj\iPhoneSimulator\Debug\ibtool\Main.storyboardc\4316-view-4317.nib">
+      <LogicalName>Main.storyboardc/4316-view-4317.nib</LogicalName>
+      <InterfaceDefinition>Main.storyboard</InterfaceDefinition>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj\iPhoneSimulator\Debug\ibtool\Main.storyboardc\5249-view-5250.nib">
+      <LogicalName>Main.storyboardc/5249-view-5250.nib</LogicalName>
+      <InterfaceDefinition>Main.storyboard</InterfaceDefinition>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj\iPhoneSimulator\Debug\ibtool\Main.storyboardc\BYZ-38-t0r-view-8bC-Xf-vdC.nib">
+      <LogicalName>Main.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib</LogicalName>
+      <InterfaceDefinition>Main.storyboard</InterfaceDefinition>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj\iPhoneSimulator\Debug\ibtool\Main.storyboardc\Info.plist">
+      <LogicalName>Main.storyboardc/Info.plist</LogicalName>
+      <InterfaceDefinition>Main.storyboard</InterfaceDefinition>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj\iPhoneSimulator\Debug\ibtool\Main.storyboardc\UINavigationController-3139.nib">
+      <LogicalName>Main.storyboardc/UINavigationController-3139.nib</LogicalName>
+      <InterfaceDefinition>Main.storyboard</InterfaceDefinition>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj\iPhoneSimulator\Debug\ibtool\Main.storyboardc\UIViewController-229.nib">
+      <LogicalName>Main.storyboardc/UIViewController-229.nib</LogicalName>
+      <InterfaceDefinition>Main.storyboard</InterfaceDefinition>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj\iPhoneSimulator\Debug\ibtool\Main.storyboardc\UIViewController-4316.nib">
+      <LogicalName>Main.storyboardc/UIViewController-4316.nib</LogicalName>
+      <InterfaceDefinition>Main.storyboard</InterfaceDefinition>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj\iPhoneSimulator\Debug\ibtool\Main.storyboardc\UIViewController-5249.nib">
+      <LogicalName>Main.storyboardc/UIViewController-5249.nib</LogicalName>
+      <InterfaceDefinition>Main.storyboard</InterfaceDefinition>
+      <Optimize>false</Optimize>
+    </_BundleResourceWithLogicalName>
+  </ItemGroup>
+</Project>
