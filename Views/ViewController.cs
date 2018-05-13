@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using UIKit;
 
 namespace Xamarin.iOS_BAC_.Views
@@ -21,5 +22,11 @@ namespace Xamarin.iOS_BAC_.Views
             // Release any cached data, images, etc that aren't in use.
         }
 
-    }
+		public override void ViewDidAppear(bool animated)
+		{
+            Console.WriteLine("Startup: "+Application.StartUpTimer.ElapsedMilliseconds.ToString());
+			base.ViewDidAppear(animated);
+		}
+
+	}
 }

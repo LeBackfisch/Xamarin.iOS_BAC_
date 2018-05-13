@@ -6,7 +6,7 @@ namespace Xamarin.iOS_BAC_.Services
     {
         public long GetPrime()
         {
-            return FindPrimeNumber(100000).Result;
+			return FindPrimeNumber(100000).Result;
         }
 
         private static async Task<long> FindPrimeNumber(int n)

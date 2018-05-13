@@ -1,0 +1,25 @@
+Function=xamarin_timezone_get_data
+	/Users/nathalieslowak/Desktop/Xamarin.iOS/Xamarin.iOS_BAC_/obj/iPhone/Debug/device-builds/iphone8.1-11.3.1/mtouch-cache/Link/mscorlib.dll
+Function=xamarin_GetFolderPath
+	/Users/nathalieslowak/Desktop/Xamarin.iOS/Xamarin.iOS_BAC_/obj/iPhone/Debug/device-builds/iphone8.1-11.3.1/mtouch-cache/Link/mscorlib.dll
+Function=xamarin_log
+	/Users/nathalieslowak/Desktop/Xamarin.iOS/Xamarin.iOS_BAC_/obj/iPhone/Debug/device-builds/iphone8.1-11.3.1/mtouch-cache/Link/mscorlib.dll
+Function=xamarin_find_protocol_wrapper_type
+	/Users/nathalieslowak/Desktop/Xamarin.iOS/Xamarin.iOS_BAC_/obj/iPhone/Debug/device-builds/iphone8.1-11.3.1/mtouch-cache/Link/Xamarin.iOS.dll
+Function=xamarin_get_block_descriptor
+	/Users/nathalieslowak/Desktop/Xamarin.iOS/Xamarin.iOS_BAC_/obj/iPhone/Debug/device-builds/iphone8.1-11.3.1/mtouch-cache/Link/Xamarin.iOS.dll
+Function=UIApplicationMain
+	/Users/nathalieslowak/Desktop/Xamarin.iOS/Xamarin.iOS_BAC_/obj/iPhone/Debug/device-builds/iphone8.1-11.3.1/mtouch-cache/Link/Xamarin.iOS.dll
+Function=CreateZStream
+	/Users/nathalieslowak/Desktop/Xamarin.iOS/Xamarin.iOS_BAC_/obj/iPhone/Debug/device-builds/iphone8.1-11.3.1/mtouch-cache/Link/System.dll
+Function=CloseZStream
+	/Users/nathalieslowak/Desktop/Xamarin.iOS/Xamarin.iOS_BAC_/obj/iPhone/Debug/device-builds/iphone8.1-11.3.1/mtouch-cache/Link/System.dll
+Function=Flush
+	/Users/nathalieslowak/Desktop/Xamarin.iOS/Xamarin.iOS_BAC_/obj/iPhone/Debug/device-builds/iphone8.1-11.3.1/mtouch-cache/Link/System.dll
+Function=ReadZStream
+	/Users/nathalieslowak/Desktop/Xamarin.iOS/Xamarin.iOS_BAC_/obj/iPhone/Debug/device-builds/iphone8.1-11.3.1/mtouch-cache/Link/System.dll
+Function=WriteZStream
+	/Users/nathalieslowak/Desktop/Xamarin.iOS/Xamarin.iOS_BAC_/obj/iPhone/Debug/device-builds/iphone8.1-11.3.1/mtouch-cache/Link/System.dll
+Function=xamarin_start_wwan
+	/Users/nathalieslowak/Desktop/Xamarin.iOS/Xamarin.iOS_BAC_/obj/iPhone/Debug/device-builds/iphone8.1-11.3.1/mtouch-cache/Link/System.dll
+Function=mono_pmip

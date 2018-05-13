@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using System.Threading.Tasks;
+using System.Diagnostics;
 using UIKit;
 using Xamarin.iOS_BAC_.Models;
 using Xamarin.iOS_BAC_.Services;
@@ -12,6 +13,7 @@ namespace Xamarin.iOS_BAC_.Views
     {
         List<StarshipModel> _starships = new List<StarshipModel>();
         private readonly StarshipService _starshipService;
+		Stopwatch stop = new Stopwatch();
         public StarshipsViewController (IntPtr handle) : base (handle)
         {
            
@@ -27,6 +29,8 @@ namespace Xamarin.iOS_BAC_.Views
 
         partial void GetStarshipsButton_TouchUpInside(UIButton sender)
         {
+            
+            stop.Start();
             bool check = NetworkInterface.GetIsNetworkAvailable();
 
             if (check)
@@ -40,6 +44,7 @@ namespace Xamarin.iOS_BAC_.Views
             {
                 return;
             }
+            
         }
 
         private async Task UpdateData()
@@ -52,6 +57,7 @@ namespace Xamarin.iOS_BAC_.Views
                 StarshipTableView.RowHeight = UITableView.AutomaticDimension;
                 StarshipTableView.EstimatedRowHeight = 40f;
                 StarshipTableView.ReloadData();
+				Debug.WriteLine("StarshipList: " + stop.Elapsed);
             });
             
         }

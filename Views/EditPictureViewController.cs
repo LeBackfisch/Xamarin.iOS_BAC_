@@ -1,9 +1,7 @@
 ﻿using System;
-using AVFoundation;
+using System.Diagnostics;
 using CoreImage;
-using CoreMedia;
 using Foundation;
-using GameKit;
 using Photos;
 using UIKit;
 
@@ -12,9 +10,7 @@ namespace Xamarin.iOS_BAC_.Views
     public partial class EditPictureViewController : UIViewController
     {
         private UIImagePickerController imagePickerForCamera;
-        private AVCaptureSession captureSession;
         private UIImage originalImage;
-        private AVCaptureStillImageOutput stillImageOutput;
         private bool clicked = false;
         public EditPictureViewController (IntPtr handle) : base (handle)
         {
@@ -29,81 +25,56 @@ namespace Xamarin.iOS_BAC_.Views
 
         private void GetPicture()
         {
-            captureSession = new AVCaptureSession();
-            var videoPreviewLayer = new AVCaptureVideoPreviewLayer(captureSession);
-            videoPreviewLayer.Frame = this.View.Frame;
-            this.View.Layer.AddSublayer(videoPreviewLayer);
+            imagePickerForCamera = new UIImagePickerController();
+            imagePickerForCamera.PrefersStatusBarHidden();
+            imagePickerForCamera.SourceType = UIImagePickerControllerSourceType.Camera;
+           
 
-            var devices = AVCaptureDevice.DevicesWithMediaType(AVMediaType.Video);
-            AVCaptureDevice captureDevice = null;
+            imagePickerForCamera.FinishedPickingMedia += Handle_FinishedPickingMedia;
+            imagePickerForCamera.Canceled += Handle_Canceled;
+            PresentViewController(imagePickerForCamera, animated: true, completionHandler: null);
+        }
 
-            foreach (var device in devices)
+        public void Handle_FinishedPickingMedia(object sender, UIImagePickerMediaPickedEventArgs e){
+            bool isImage = false;
+            switch (e.Info[UIImagePickerController.MediaType].ToString()){
+                case "public.image":  
+                    isImage = true;  
+                    break;  
+                case "public.video":  
+                    break;  
+            }
+            NSUrl referenceURL = e.Info[new NSString("UIImagePickerControllerReferenceUrl")] as NSUrl;
+            if (referenceURL != null)
+                Console.WriteLine("Url:" + referenceURL.ToString());
+
+            // if it was an image, get the other image info
+            if (isImage)
             {
-                if (device.Position == AVCaptureDevicePosition.Front)
+                // get the original image
+                UIImage originalImg = e.Info[UIImagePickerController.OriginalImage] as UIImage;
+                if (originalImg != null)
                 {
-                    captureDevice = device;
+                    PictureView.Image = originalImg;
+                    originalImage = originalImg;
                 }
             }
-
-            // Configure Camera on device - check if some features are supported on the device
-            ConfigureCameraForDevice(captureDevice);
-
-            // Define Device Input and add it to the Session
-            var captureDeviceInput = AVCaptureDeviceInput.FromDevice(captureDevice);
-            captureSession.AddInput(captureDeviceInput);
-
-            // NSDictionary settings
-            var settings = new NSMutableDictionary();
-            settings[AVVideo.CodecKey] = new NSNumber((int)AVVideoCodec.JPEG);
-
-            // Define Still Image Output
-            stillImageOutput = new AVCaptureStillImageOutput();
-
-            // Add Output to Session ans Start
-            captureSession.AddOutput(stillImageOutput);
-            captureSession.StartRunning();
-            /*
-            imagePickerForCamera = new UIImagePickerController();
-            imagePickerForCamera.SourceType = UIImagePickerControllerSourceType.Camera;
-
-            imagePickerForCamera.MediaTypes = UIImagePickerController.AvailableMediaTypes(UIImagePickerControllerSourceType.Camera);
-
-            //imagePickerForCamera.FinishedPickingMedia += Handle_FinishedPickingMedia;
-           // imagePickerForCamera.Canceled += Handle_Canceled; */
+            else
+            { 
+                NSUrl mediaURL = e.Info[UIImagePickerController.MediaURL] as NSUrl;
+                if (mediaURL != null)
+                {
+                    Console.WriteLine(mediaURL.ToString());
+                }
+            }
+            imagePickerForCamera.DismissModalViewController(true);
+            EditPictureButton.Enabled = true;
+            SavePictureButton.Enabled = true;
+            clicked = false;
         }
 
-        public void ConfigureCameraForDevice(AVCaptureDevice device)
-        {
-            var error = new NSError();
-            if (device.IsFocusModeSupported(AVCaptureFocusMode.ContinuousAutoFocus))
-            {
-                device.LockForConfiguration(out error);
-                device.FocusMode = AVCaptureFocusMode.ContinuousAutoFocus;
-                device.UnlockForConfiguration();
-            }
-            else if (device.IsExposureModeSupported(AVCaptureExposureMode.ContinuousAutoExposure))
-            {
-                device.LockForConfiguration(out error);
-                device.ExposureMode = AVCaptureExposureMode.ContinuousAutoExposure;
-                device.UnlockForConfiguration();
-            }
-            else if (device.IsWhiteBalanceModeSupported(AVCaptureWhiteBalanceMode.ContinuousAutoWhiteBalance))
-            {
-                device.LockForConfiguration(out error);
-                device.WhiteBalanceMode = AVCaptureWhiteBalanceMode.ContinuousAutoWhiteBalance;
-                device.UnlockForConfiguration();
-            }
-        }
-
-        private async void CapturePhoto()
-        {
-            var videoConnection = stillImageOutput.ConnectionFromMediaType(AVMediaType.Video);
-            CMSampleBuffer sampleBuffer = await stillImageOutput.CaptureStillImageTaskAsync(videoConnection);
-
-            var jpegImageAsNsData = AVCaptureStillImageOutput.JpegStillToNSData(sampleBuffer);
-            originalImage = UIImage.LoadFromData(jpegImageAsNsData);
-
-           // this.PerformSegue("SegueToWaitingScreen", this);
+        public void Handle_Canceled(object sender, EventArgs e){
+            imagePickerForCamera.DismissModalViewController(true);
         }
 
         private void EditPicture()
@@ -118,6 +89,7 @@ namespace Xamarin.iOS_BAC_.Views
                 var uiimage = PictureView.Image;
                 originalImage = uiimage;
                 var image = new CIImage(uiimage.CGImage);
+                var originialOrientation = PictureView.Image.Orientation;
 
                 var filter = new CIMinimumComponent()
                 {
@@ -129,15 +101,16 @@ namespace Xamarin.iOS_BAC_.Views
                 var context = CIContext.FromOptions(null);
                 var cgimage = context.CreateCGImage(output, output.Extent);
 
-                PictureView.Image = UIImage.FromImage(cgimage);
+                PictureView.Image = UIImage.FromImage(cgimage, 1.0f, originialOrientation);
                 clicked = true;
             }
+
         }
 
         private void SavePicture()
         {
+            
             var image = PictureView.Image;
-            bool allowed = false;
 
             PHPhotoLibrary.RequestAuthorization(status =>
             {
@@ -148,35 +121,43 @@ namespace Xamarin.iOS_BAC_.Views
 
                         return;
                     case PHAuthorizationStatus.Authorized:
-                        allowed = true;
                         break;
                 }
             });
-            if (allowed)
+
+            image.SaveToPhotosAlbum((UIimage, error) =>
             {
-                image.SaveToPhotosAlbum((UIimage, error) =>
+                if (error != null)
+                {
+                    Console.WriteLine("error:" + error);
+                }
+                else
                 {
                     var o = UIimage as UIImage;
-                    Console.WriteLine("error:"+error);
-                });
-            }
+                }
+            });
         }
 
         partial void TakePictureButton_TouchUpInside(UIButton sender)
         {
-            //GetPicture();
-            EditPictureButton.Enabled = true;
-            SavePictureButton.Enabled = true;
+            GetPicture();
         }
 
         partial void EditPictureButton_TouchUpInside(UIButton sender)
         {
+            var stop = new Stopwatch();
+            stop.Start();
             EditPicture();
+            Debug.WriteLine("Edit Picture: " + stop.Elapsed);
         }
 
         partial void SavePictureButton_TouchUpInside(UIButton sender)
         {
+            var stop = new Stopwatch();
+            stop.Start();
             SavePicture();
+            Debug.WriteLine("Save Picture: " + stop.Elapsed);
+
         }
     }
 }

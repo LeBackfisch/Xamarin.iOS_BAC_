@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{803A55BB-7AA5-442E-B156-136A7C5A1A4F}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Main.cs">
+    <Files>
+      <File FileName="Info.plist" />
+      <File FileName="Views/EditPictureViewController.cs" Line="151" Column="18" />
+      <File FileName="Main.storyboard" />
+      <File FileName="Main.cs" Line="1" Column="13" />
+      <File FileName="AppDelegate.cs" Line="12" Column="36" />
+      <File FileName="Views/ViewController.cs" Line="28" Column="3" />
+      <File FileName="Views/BackgroundThreadViewController.cs" Line="26" Column="10" />
+      <File FileName="Views/StarshipsViewController.cs" Line="9" Column="1" />
+      <File FileName="Services/StarshipService.cs" Line="26" Column="1" />
+      <File FileName="packages.config" Line="1" Column="1" />
+      <File FileName="GettingStarted.Xamarin" Line="1" Column="1" />
+      <File FileName="Models/DataModel.cs" Line="1" Column="1" />
+      <File FileName="Models/StarshipModel.cs" Line="24" Column="1" />
+      <File FileName="Services/PrimeService.cs" Line="8" Column="10" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Xamarin.iOS__BAC__ PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.ab13f8eefd5d36edc1819339e77b4b4598c909e9" automaticSigning="False" />
+</Properties>
